@@ -5,20 +5,26 @@ import SmallCard from '../components/SmallCard';
 import MediumCard from '../components/MediumCard';
 import LargeCard from '../components/LargeCard';
 import Footer from '../components/Footer';
-
-export default function Home({exploreData, cardsData}) {
+import Slide from 'react-reveal/Slide';
+import Tilt from 'react-tilt'
+import BigCard from '../components/BigCard';
+export default function Home({exploreData, cardsData, img, title, description}) {
   return (
-    <div className="">
+    <div className="bg-transparent">
       <Head>
         <title>Marty's Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <Header />
+      <Slide left>
       <Banner />
+      </Slide>
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
+        
         <section className="pt-6">
+        <Slide top>
           <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {exploreData?.map(({img, distance, location}) =>
@@ -30,8 +36,14 @@ export default function Home({exploreData, cardsData}) {
             />  
           )}
             </div>
+            </Slide>
+
+            <Tilt options={{ max : 10}}>
+        <LargeCard img="https://links.papareact.com/0fm" title="Not sure where to go? Perfect" description="No worries we got you!" buttonText="I'm flexible"/>
+        </Tilt>  
         </section>
 
+        
         <section>
           <h2 className="text-4xl font-semibold py-6">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 ml-3">
@@ -40,11 +52,22 @@ export default function Home({exploreData, cardsData}) {
           ))}
           </div>
         </section>
-
-        <LargeCard img="https:links.papareact.com/4cj" title="The Greatest Outdoors" description="Wishlists curated by Airbnb" buttonText="Get Inspired"/>
+        <section>
+          <h2 className="text-4xl font-semibold py-6">Discover things to do</h2>
+          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 ml-3">
+          <BigCard img="https://a0.muscache.com/im/pictures/247a1ea3-946d-4eb8-a6ab-e8b9a66846f4.jpg?im_w=480" title="Featured collection" description="Travel from home with Online Experiences."/>
+          <BigCard img="https://a0.muscache.com/im/pictures/a6b08861-feb8-4a01-a76d-b33d2867b441.jpg?im_w=480" title="Online Experiences" description ="Live, interactive activities led by Hosts."/>
+          <BigCard img="https://a0.muscache.com/im/pictures/ad109d56-2421-40cd-98e6-e114160dc85b.jpg?im_w=480" title="Experiences" description ="Find unforgettable activities near you."/>
+          <BigCard img="https://airbnb-clone-lac.vercel.app/_next/image?url=https%3A%2F%2Flinks.papareact.com%2F2io&w=1920&q=75" title="Outdoor Activities" description ="Breathe, live & have extra fun"/>
+          </div>
+        </section>
+        <Tilt options={{ max : 10}}>
+        <LargeCard img="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440" title="Try Hosting" description="Earn extra income and unlock new opportunities by sharing you space." buttonText="Get Inspired"/>
+        </Tilt>
       </main>
-
+      <Slide left>
       <Footer />
+      </Slide>
     </div>
   )
 }
