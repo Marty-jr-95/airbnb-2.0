@@ -16,8 +16,10 @@ const Search = ({searchResults}) => {
     
     return (
         <div>
+            
             <Header placeholder={`${location} | ${range} | ${numberOfGuests}`}/>
-
+            
+            <Slide top>
             <main className="flex">
                 <section className="flex-grow pt-14 px-6">
                     <div className="bg-white shadow-lg rounded-lg pt-4 pl-4 pb-1">
@@ -33,7 +35,7 @@ const Search = ({searchResults}) => {
                         <p className="button">More filters</p>
                     </div>
 
-                    <Slide top>
+                    
                     <div className="flex flex-col">
                     {searchResults.map(({img, location, title, description, star, price, total}) => (
                         <InfoCard 
@@ -48,10 +50,13 @@ const Search = ({searchResults}) => {
                         />
                     ))}
                     </div>
-                    </Slide>
+                   
                 </section>
             </main>
-            <Footer />
+            </Slide>
+            <Slide left>
+                <Footer />
+            </Slide>
         </div>
     )
 }
