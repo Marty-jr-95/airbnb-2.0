@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { SearchIcon, GlobeAltIcon, MenuIcon, UserCircleIcon, UsersIcon } from "@heroicons/react/solid"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
@@ -13,6 +13,22 @@ const Header = ({placeholder}) => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [numberOfGuests, setNumberOfGuests] = useState(1);
+
+    const [show, setShow] = useState(false);
+
+    const handleChange = () => {
+        if (window.scrollY > 100) {
+            setShow(true);
+        } else {
+            setShow(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleChange);
+        return () => window.removeEventListener('scroll', handleChange);
+    }, [])
+
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
@@ -42,7 +58,7 @@ const Header = ({placeholder}) => {
 
     return (
         
-        <header className="sticky top-0 z-50 shadow-md bg-white grid grid-cols-3 p-5 md:px-10">
+        <header className={`fixed w-full top-0 z-50 navbar grid grid-cols-3 p-5 md:px-10 ${show && "nav_stickey"}`}>
             
             <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
                 <Image

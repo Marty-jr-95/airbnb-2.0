@@ -6,4 +6,18 @@
     .button {
         @apply px-4  text-center py-2 rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition duration-100 ease-out
     }
+
+    .navbar {
+        transition: all 0.5;
+        -webkit-transition: all 0.5;
+        -moz-transition: all 0.5;
+        -ms-transition: all 0.5;
+        -o-transition: all 0.5;
 }
+
+.nav_stickey {
+    background: #fff;
+    box-shadow: 0px 3px 14px #96969633;
+}
+}
+
