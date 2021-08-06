@@ -13,7 +13,7 @@ export default function Home({exploreData, cardsData, img, title, description}) 
     <div className="bg-transparent">
       <Head>
         <title>Marty's Airbnb</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png" />
       </Head>
       
       <Header />
