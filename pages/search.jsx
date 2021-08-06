@@ -20,7 +20,7 @@ const Search = ({searchResults}) => {
             <Header placeholder={`${location} | ${range} | ${numberOfGuests}`}/>
             
             <Slide top>
-            <main className="flex">
+            <main className="flex mb-10">
                 <section className="flex-grow pt-14 px-6">
                     <div className="bg-white shadow-lg rounded-lg pt-4 pl-4 pb-1">
                     <p className="text-sm">300+ Stays - {range} - for {numberOfGuests} guests</p>
