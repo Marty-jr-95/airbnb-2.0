@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-4 space-10 px-32 py-14 bg-gray-100 text-gray-600">
-            <div className="space-y-4 text-xs sm:text-sm md:text-md lg:text-lg text-gray-800 ">
+            <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">ABOUT</h5>
                 <p>How Airbnb works</p>
                 <p>Newsroom</p>
@@ -11,7 +11,7 @@ const Footer = () => {
                 
             </div>
 
-            <div className="space-y-4 text-xs sm:text-sm md:text-md lg:text-lg text-gray-800 ">
+            <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">COMMUNITY</h5>
                 <p>Accessibilty</p>
                 <p>Services</p>
@@ -20,7 +20,7 @@ const Footer = () => {
                 <p>Frontline stays</p>
                 
             </div>
-            <div className="space-y-4 text-xs sm:text-sm md:text-md lg:text-lg text-gray-800 ">
+            <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">HOST</h5>
                 <p>Host your home</p>
                 <p>Host an Online Experience</p>
@@ -29,7 +29,7 @@ const Footer = () => {
                 <p>Community Center</p>
                
             </div>
-            <div className="space-y-4 text-xs sm:text-sm md:text-md lg:text-lg text-gray-800 ">
+            <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">Support</h5>
                 <p>Help Center</p>
                 <p>Trust & Safety</p>
