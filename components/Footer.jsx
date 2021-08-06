@@ -31,10 +31,10 @@ const Footer = () => {
             </div>
             <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">Support</h5>
-                <p>Help Center</p>
-                <p>Trust & Safety</p>
                 <p>Cancellation Options</p>
                 <p>Neighborhood Support</p>
+                <p>Help Center</p>
+                <p>Trust & Safety</p>
             </div>
 
             
