@@ -4,6 +4,7 @@ import { useRouter } from "next/dist/client/router"
 import  format  from "date-fns/format";
 import InfoCard from "../components/InfoCard";
 import Slide from "react-reveal"
+import Head from "next/head";
 
 const Search = ({searchResults}) => {
 
@@ -16,6 +17,10 @@ const Search = ({searchResults}) => {
     
     return (
         <div>
+            <Head>
+                <title>Your search results</title>
+                <link rel="icon" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png" />
+            </Head>
             
             <Header placeholder={`${location} | ${range} | ${numberOfGuests}`}/>
             
