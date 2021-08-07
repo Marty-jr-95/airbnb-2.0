@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { getCenter } from 'geolib';
+import { StarIcon } from '@heroicons/react/solid';
+import { HeartIcon } from '@heroicons/react/outline';
 
 const Map = ({searchResults}) => {
 
@@ -43,7 +45,7 @@ const Map = ({searchResults}) => {
                         offsetLeft={20}
                         offsetTop={-10}
                     >
-                        <p role="img" onClick={() => setSelectedLocation(result)} className="cursor-pointer text-2xl animate-bounce" aria-label="push-pin">📌</p>
+                        <img src="/images/mapbox-marker-icon-pink.svg" role="img" onClick={() => setSelectedLocation(result)} className="cursor-pointer text-2xl animate-bounce" aria-label="push-pin" />
                     </Marker>
 
                     {selectedLocation.long === result.long ? (
@@ -54,7 +56,17 @@ const Map = ({searchResults}) => {
                           longitude={result.long}
                           className="bg-red-400"  
                         >
-                                {result.title}
+                            <div className="flex flex-col">
+                            <img src={result.img} objectFit="contain" className="h-[180px] w-full mt-4 mb-3 rounded-lg"/>    
+                            <p className="text-md font-bold mb-2">{result.title}</p>
+                            <p className="text-md font-semibold mb-2">{result.price}</p>
+                            <div className="flex items-center justify-between">
+                                <p className="flex items-center"><StarIcon className="h-5 text-red-400"/>{result.star}</p>
+                                <HeartIcon className="h-7 cursor-pointer text-red-400" />
+                            </div>
+                            </div>
+                                
+                                
                         </Popup>
                     ): (
                         false

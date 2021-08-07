@@ -87,7 +87,7 @@ const Header = ({placeholder}) => {
             </div>
 
             {searchInput && 
-                <div className = "flex flex-col col-span-3 mx-auto">
+                <div className = "bg-white flex flex-col col-span-3 mx-auto p-5 rounded-2xl">
                    <DateRangePicker 
                         ranges={[selectionRange]}
                         minDate = {new Date()}
@@ -100,7 +100,7 @@ const Header = ({placeholder}) => {
                        <input value={numberOfGuests} min={1} onChange={(e) => setNumberOfGuests(e.target.value)} type="number" className="w-12 pl-2 text-lg text-red-400 outline-none"/>
                    </div>
 
-                   <div className="flex space-x-2">
+                   <div className="flex space-x-2 mb-5">
                        <button onClick={resetInput} className="flex-grow rounded-md hover:shadow-lg font-semibold bg-gray-100 text-gray-500">Cancle</button>
                        <button onClick={search} className="flex-grow bg-red-400 rounded-md text-white font-semibold hover:bg-gray-100 hover:text-red-400">Search</button>
                    </div>

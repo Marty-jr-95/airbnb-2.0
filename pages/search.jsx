@@ -25,8 +25,9 @@ const Search = ({searchResults}) => {
             
             <Header placeholder={`${location} | ${range} | ${numberOfGuests}`}/>
             
-            <Slide top>
+            
             <main className="flex mb-10">
+            <Slide left>
                 <section className="flex-grow pt-14 px-6">
                     <div className="bg-white mt-6 shadow-lg rounded-lg pt-4 pl-4 pb-1">
                     <p className="text-sm">300+ Stays - {range} - for {numberOfGuests} guests</p>
@@ -58,12 +59,14 @@ const Search = ({searchResults}) => {
                     </div>
                    
                 </section>
-
+                </Slide>
+                <Slide right>
                 <section className="hidden xl:inline-flex xl:min-w-[600px] mt-20 bg-blend-darken">
                     <Map searchResults={searchResults} />
                 </section>
+                </Slide>
             </main>
-            </Slide>
+            
             <Slide left>
                 <Footer />
             </Slide>
