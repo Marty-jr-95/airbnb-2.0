@@ -101,8 +101,8 @@ const Header = ({placeholder}) => {
                    </div>
 
                    <div className="flex space-x-2 mb-5">
-                       <button onClick={resetInput} className="flex-grow rounded-md hover:shadow-lg font-semibold bg-gray-100 text-gray-500">Cancle</button>
-                       <button onClick={search} className="flex-grow bg-red-400 rounded-md text-white font-semibold hover:bg-gray-100 hover:text-red-400">Search</button>
+                       <button onClick={resetInput} className="flex-grow rounded-md hover:shadow-lg font-semibold bg-gray-100 text-gray-500 py-2">Cancle</button>
+                       <button onClick={search} className="flex-grow bg-red-400 rounded-md text-white font-semibold hover:bg-gray-100 hover:text-red-400 py-2">Search</button>
                    </div>
                 </div>
             }
