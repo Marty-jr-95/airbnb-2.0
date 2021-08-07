@@ -5,6 +5,7 @@ import  format  from "date-fns/format";
 import InfoCard from "../components/InfoCard";
 import Slide from "react-reveal"
 import Head from "next/head";
+import Map from "../components/Map";
 
 const Search = ({searchResults}) => {
 
@@ -27,7 +28,7 @@ const Search = ({searchResults}) => {
             <Slide top>
             <main className="flex mb-10">
                 <section className="flex-grow pt-14 px-6">
-                    <div className="bg-white shadow-lg rounded-lg pt-4 pl-4 pb-1">
+                    <div className="bg-white mt-6 shadow-lg rounded-lg pt-4 pl-4 pb-1">
                     <p className="text-sm">300+ Stays - {range} - for {numberOfGuests} guests</p>
                     <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}</h1>
                     </div>
@@ -56,6 +57,10 @@ const Search = ({searchResults}) => {
                     ))}
                     </div>
                    
+                </section>
+
+                <section className="hidden xl:inline-flex xl:min-w-[600px] mt-20 bg-blend-darken">
+                    <Map searchResults={searchResults} />
                 </section>
             </main>
             </Slide>
