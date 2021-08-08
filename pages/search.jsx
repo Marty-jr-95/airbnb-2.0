@@ -60,6 +60,7 @@ const Search = ({searchResults}) => {
                    
                 </section>
                 </Slide>
+                
                 <Slide right>
                 <section className="hidden xl:inline-flex xl:min-w-[600px] mt-20 bg-blend-darken">
                     <Map searchResults={searchResults} />

@@ -54,7 +54,7 @@ const Map = ({searchResults}) => {
                           closeOnClick={true}
                           latitude={result.lat}
                           longitude={result.long}
-                          className="bg-red-400"  
+                          className="bg-red-400 z-10 rounded-sm"  
                         >
                             <div className="flex flex-col">
                             <img src={result.img} objectFit="contain" className="h-[180px] w-full mt-4 mb-3 rounded-lg"/>    
