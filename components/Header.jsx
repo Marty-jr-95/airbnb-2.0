@@ -30,17 +30,19 @@ const Header = ({placeholder}) => {
         return () => window.removeEventListener('scroll', handleChange);
     }, [])
 
+    const handleSelect = (ranges) => {
+        setStartDate(ranges.selection.startDate);
+        setEndDate(ranges.selection.endDate);
+    }
+
+
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
-        key: 'selection',
+        key: "selection",
     }
 
-    const handleSelect =(ranges) => {
-        setStartDate(ranges.selection.startDate)
-        setEndDate(ranges.selection.endDate)
-    }
-
+    
     const resetInput = () => {
         setSearchInput('')
     }
@@ -50,8 +52,8 @@ const Header = ({placeholder}) => {
             pathname: '/search',
             query: {
                 location: searchInput,
-                startDate: new Date().toISOString(),
-                endDate: new Date().toISOString(),
+                startDate: startDate.toISOString(),
+                endDate: endDate.toISOString(),
                 numberOfGuests,
             }
         })
@@ -91,7 +93,9 @@ const Header = ({placeholder}) => {
                 <div className = "bg-white flex flex-col col-span-3 mx-auto p-5 rounded-2xl">
                    <DateRangePicker 
                         ranges={[selectionRange]}
-                        minDate = {new Date()}
+                        showSelectionPreview={true}
+                        moveRangeOnFirstSelection={false}
+                        minDate={new Date()}
                         rangeColors={["#FD5861"]}
                         onChange={handleSelect}
                    />
