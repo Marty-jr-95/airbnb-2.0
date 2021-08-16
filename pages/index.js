@@ -10,7 +10,7 @@ import Tilt from 'react-tilt'
 import BigCard from '../components/BigCard';
 export default function Home({exploreData, cardsData, img, title, description}) {
   return (
-    <div className="bg-transparent">
+    <div className="dark:bg-gray-900">
       <Head>
         <title>Marty's Airbnb</title>
         <link rel="icon" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png" />
@@ -25,7 +25,7 @@ export default function Home({exploreData, cardsData, img, title, description}) 
         
         <section className="pt-6">
         <Slide top>
-          <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
+          <h2 className="text-4xl font-semibold pb-5 dark:text-gray-300">Explore Nearby</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {exploreData?.map(({img, distance, location}) =>
             <SmallCard 
@@ -45,7 +45,7 @@ export default function Home({exploreData, cardsData, img, title, description}) 
 
         
         <section>
-          <h2 className="text-4xl font-semibold py-6">Live Anywhere</h2>
+          <h2 className="text-4xl font-semibold py-6 dark:text-gray-300">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 ml-3">
           {cardsData?.map(({img, title}) => (
             <MediumCard key={img} img={img} title={title}/>
@@ -53,7 +53,7 @@ export default function Home({exploreData, cardsData, img, title, description}) 
           </div>
         </section>
         <section>
-          <h2 className="text-4xl font-semibold py-6">Discover things to do</h2>
+          <h2 className="text-4xl font-semibold py-6 dark:text-gray-300">Discover things to do</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 ml-3">
           <BigCard img="https://a0.muscache.com/im/pictures/247a1ea3-946d-4eb8-a6ab-e8b9a66846f4.jpg?im_w=480" title="Featured collection" description="Travel from home with Online Experiences."/>
           <BigCard img="https://a0.muscache.com/im/pictures/a6b08861-feb8-4a01-a76d-b33d2867b441.jpg?im_w=480" title="Online Experiences" description ="Live, interactive activities led by Hosts."/>

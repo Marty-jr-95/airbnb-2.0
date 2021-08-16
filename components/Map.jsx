@@ -36,6 +36,7 @@ const Map = ({searchResults}) => {
            mapStyle = "mapbox://styles/martyjr-95/cks0xel5d489v18p67g08ier5"
            mapboxApiAccessToken = {process.env.mapbox_key}
            onViewportChange={(nextViewport) => setViewport(nextViewport)}
+           className="rounded-lg"
         >
             {searchResults.map(result => (
                 <div key={result.long}>

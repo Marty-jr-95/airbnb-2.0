@@ -4,7 +4,7 @@
 
 @layer components {
     .button {
-        @apply px-4  text-center py-2 rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 transition duration-100 ease-out
+        @apply px-4  text-center py-2 rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-gray-100 dark:active:bg-gray-600 dark:hover:bg-gray-100 transition duration-100 ease-out
     }
 
     .navbar {

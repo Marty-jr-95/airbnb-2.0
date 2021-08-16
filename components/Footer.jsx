@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-4 space-10 px-32 py-14 bg-gray-100 text-gray-600">
+        <div className="grid grid-cols-1 md:grid-cols-4 space-10 px-32 py-14 dark:bg-gray-200 bg-gray-100 text-gray-600">
             <div className="space-y-4 text-xs sm:text-sm md:text-md text-gray-800 ">
                 <h5 className="font-bold mt-5">ABOUT</h5>
                 <p>How Airbnb works</p>
@@ -37,8 +37,12 @@ const Footer = () => {
                 <p>Trust & Safety</p>
             </div>
 
-            
-         
+            <div className="border-b-2 mt-11 flex md:flex-row dark:border-b-gray-300 md:col-span-4 md:grid-cols-4"></div>
+            <div className="flex flex-col md:flex-row md:col-span-4 sm:items-center w-full md:justify-between mt-4">
+                <p className="text-sm md:text-md">© 2021 Airbnb clone!</p>
+                <p className="text-sm md:text-md">Made with 💗 by Marty Muhanga</p>
+                
+            </div>
         </div>
     )
 }

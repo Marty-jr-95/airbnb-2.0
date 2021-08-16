@@ -5,6 +5,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from "next/dist/client/router"
+import useDarkMode from "../useDarkMode";
 
 const Header = ({placeholder}) => {
     
@@ -14,7 +15,7 @@ const Header = ({placeholder}) => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [numberOfGuests, setNumberOfGuests] = useState(1);
-
+    const [colorTheme, setTheme] = useDarkMode();
     const [show, setShow] = useState(false);
 
     const handleChange = () => {
@@ -61,7 +62,7 @@ const Header = ({placeholder}) => {
 
     return (
         
-        <header className={`fixed w-full top-0 z-50 navbar grid grid-cols-3 p-5 md:px-10 ${show && "nav_stickey"}`}>
+        <header className={`fixed w-full dark:bg-gray-900 dark:border-b top-0 z-50 navbar grid grid-cols-3 p-5 md:px-10 ${show && "nav_stickey"}`}>
             
             <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
                 <Image
@@ -73,7 +74,7 @@ const Header = ({placeholder}) => {
                  
             </div>
 
-            <div className="flex md:border-2 md:shadow-sm rounded-full py-2 c">
+            <div className="flex md:border-2 md:shadow-sm rounded-full py-2">
                 <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className="flex-grow bg-transparent outline-none pl-5 text-sm text-gray-600 placeholder-gray-400" type="text" placeholder={placeholder || "Start your search..."}/>
                 <SearchIcon className="hidden md:mx-2 md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer"/>
             </div>
@@ -87,10 +88,44 @@ const Header = ({placeholder}) => {
                     <UserCircleIcon className="h-6 cursor-pointer"/>
                 </div>
 
+                {colorTheme === "light" ? (
+        <svg
+          onClick={() => setTheme("light")}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-10 w-10 text-gray-500 cursor-pointer"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          />
+        </svg>
+      ) : (
+        <svg
+          onClick={() => setTheme("dark")}
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-10 w-10 text-gray-500 cursor-pointer"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          />
+        </svg>
+      )}
+
             </div>
 
             {searchInput && 
-                <div className = "bg-white flex flex-col col-span-3 mx-auto p-5 rounded-2xl">
+                <div className="bg-white flex flex-col col-span-3 mx-auto p-5 rounded-2xl">
                    <DateRangePicker 
                         ranges={[selectionRange]}
                         showSelectionPreview={true}
@@ -109,8 +144,12 @@ const Header = ({placeholder}) => {
                        <button onClick={resetInput} className="flex-grow rounded-md hover:shadow-lg font-semibold bg-gray-100 text-gray-500 py-2">Cancle</button>
                        <button onClick={search} className="flex-grow bg-red-400 rounded-md text-white font-semibold hover:bg-gray-100 hover:text-red-400 py-2">Search</button>
                    </div>
+
+                   
                 </div>
             }
+
+
             
 
         </header>

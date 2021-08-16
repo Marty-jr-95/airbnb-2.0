@@ -17,7 +17,7 @@ const Search = ({searchResults}) => {
     const range = `${formattedStartDate} - ${formattedEndDate}`;
     
     return (
-        <div>
+        <div className="dark:bg-gray-900 mt-8">
             <Head>
                 <title>Your search results</title>
                 <link rel="icon" href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png" />
@@ -28,13 +28,13 @@ const Search = ({searchResults}) => {
             
             <main className="flex mb-10">
             <Slide left>
-                <section className="flex-grow pt-14 px-6">
-                    <div className="bg-white mt-6 shadow-lg rounded-lg pt-4 pl-4 pb-1">
+                <section className="flex-grow pt-14 px-4">
+                    <div className="bg-white dark:bg-gray-200 mt-6 shadow-md rounded-lg pt-4 pl-4 pb-1">
                     <p className="text-sm">300+ Stays - {range} - for {numberOfGuests} guests</p>
-                    <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}</h1>
+                    <h1 className="text-3xl text-gray-900 font-semibold mt-2 mb-6">Stays in {location}</h1>
                     </div>
 
-                    <div className="hidden lg:inline-flex mb-5 mt-3 space-x-3 text-gray-800 whitespace-nowrap">
+                    <div className="hidden lg:inline-flex mb-5 mt-3 space-x-3 text-gray-800 dark:text-gray-300 whitespace-nowrap">
                         <p className="button">Cancellation Flexibility</p>
                         <p className="button">Type of Place</p>
                         <p className="button">Price</p>
@@ -62,7 +62,7 @@ const Search = ({searchResults}) => {
                 </Slide>
                 
                 <Slide right>
-                <section className="hidden xl:inline-flex xl:min-w-[600px] mt-20 bg-blend-darken">
+                <section className="hidden xl:inline-flex xl:min-w-[600px] mt-20 bg-blend-darken mr-3">
                     <Map searchResults={searchResults} />
                 </section>
                 </Slide>

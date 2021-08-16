@@ -12,19 +12,19 @@ const InfoCard = ({img, location, title, description, star, price, total}) => {
 
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
-                    <p>{location}</p>
+                    <p className="dark:text-gray-300">{location}</p>
                     <HeartIcon className="h-7 cursor-pointer text-red-400" />
                 </div>
-                <h4 className="text-xl">{title}</h4>
+                <h4 className="text-xl dark:text-gray-300">{title}</h4>
 
                 <div className="border-b w-10 pt-2"/>
-                <p className="text-sm text-gray-500 flex-grow">{description}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 flex-grow">{description}</p>
                 <div className="flex justify-between items-end pt-5">
-                    <p className="flex items-center"><StarIcon className="h-5 text-red-400"/>{star }</p>
+                    <p className="flex items-center dark:text-gray-300"><StarIcon className="h-5 text-red-400"/>{star }</p>
 
                     <div>
-                        <p className="text-lg lg:text-2xl font-semibold pb-2">{price}</p>
-                        <p className="text-right font-extralight">{total}</p>
+                        <p className="text-lg lg:text-2xl font-semibold pb-2 dark:text-gray-300">{price}</p>
+                        <p className="text-right font-extralight dark:text-gray-400">{total}</p>
                     </div>
                 </div>
             </div>
